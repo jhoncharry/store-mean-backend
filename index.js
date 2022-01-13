@@ -1,6 +1,8 @@
 "use strict";
 
-require("dotenv").config();
+require("dotenv").config({
+  path: `.env.development`,
+});
 
 const express = require("express");
 const cors = require("cors");
