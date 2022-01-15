@@ -57,7 +57,7 @@ const updateConfig = async (req = request, res = response) => {
     // Validar que exista un archivo
     if (req.files && Object.keys(req.files).length !== 0) {
       let img_path = req.files.logo.path;
-      let name = img_path.split("\\");
+      let name = img_path.split("/");
       let logo_name = name[2];
 
       data.logo = logo_name;

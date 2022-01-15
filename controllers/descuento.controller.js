@@ -18,7 +18,7 @@ const createDescuento = async (req = request, res = response) => {
   let data = req.body;
 
   let img_path = req.files.banner.path;
-  let name = img_path.split("\\");
+  let name = img_path.split("/");
   let banner_name = name[2];
 
   // Guardar usuario
@@ -169,7 +169,7 @@ const updateDescuento = async (req = request, res = response) => {
     // Validar que exista un archivo
     if (req.files && Object.keys(req.files).length !== 0) {
       let img_path = req.files.banner.path;
-      let name = img_path.split("\\");
+      let name = img_path.split("/");
       let banner_name = name[2];
 
       data.banner = banner_name;

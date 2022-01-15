@@ -19,7 +19,7 @@ const createProduct = async (req = request, res = response) => {
   console.log(req.files); */
 
   let img_path = req.files.portada.path;
-  let name = img_path.split("\\");
+  let name = img_path.split("/");
   let portada_name = name[2];
 
   // Guardar usuario
@@ -207,7 +207,7 @@ const updateProduct = async (req = request, res = response) => {
     // Validar que exista un archivo
     if (req.files && Object.keys(req.files).length !== 0) {
       let img_path = req.files.portada.path;
-      let name = img_path.split("\\");
+      let name = img_path.split("/");
       let portada_name = name[2];
 
       data.portada = portada_name;
@@ -300,7 +300,7 @@ const updateGalleryProduct = async (req = request, res = response) => {
 
     let img_path = req.files.imagen.path;
     console.log(img_path);
-    let name = img_path.split("\\");
+    let name = img_path.split("/");
     let galeria_name = name[3];
 
     // data.portada = galleria_name;
